@@ -62,7 +62,7 @@ class CaptchaAction extends \yii\captcha\CaptchaAction
     {
         if (Yii::$app->request->getQueryParam(self::REFRESH_GET_VAR) !== null) {
             // AJAX request for regenerating code
-            $equation = $this->getVerifyCode(true);
+            $equation = (string) $this->getVerifyCode(true);
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
                 'hash1' => $this->generateValidationHash($equation),
