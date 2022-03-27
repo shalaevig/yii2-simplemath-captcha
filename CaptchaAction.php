@@ -180,7 +180,7 @@ class CaptchaAction extends \yii\captcha\CaptchaAction
             return $this->fixedVerifyCode;
         }
 		
-		return $equation['first'] ."~". $equation['operator'] ."~". $equation['second'] ."~=";
+		return ($equation['first'] ?? '') ."~". ($equation['operator'] ?? '') ."~". ($equation['second'] ?? '') ."~=";
     }
 
     /**
